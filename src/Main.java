@@ -9,7 +9,6 @@ public class Main {
         }
     }
 
-
     public static void softwareVersion(int deviceYear, byte clientOS) {
         int currentYear = LocalDate.now().getYear();
         if (deviceYear < currentYear) {
