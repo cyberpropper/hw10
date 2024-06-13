@@ -10,26 +10,25 @@ public class Main {
     }
 
 
-    public static void softwareVersion(int deviceYear) {
+    public static void softwareVersion(int deviceYear, byte clientOS) {
         int currentYear = LocalDate.now().getYear();
-        byte clientOS = 1;
         if (deviceYear < currentYear) {
             if (clientOS == 0) {
-                System.out.println("Установите облегченную версию приложения для iOS по ссылке");
+                System.out.println("Установите облегченную версию приложения для iOS");
             } else {
-                System.out.println("Установите облегченную версию приложения для Android по ссылке");
+                System.out.println("Установите облегченную версию приложения для Android");
             }
 
         } else {
             if (clientOS == 0) {
-                System.out.println("Установите версию приложения для iOS по ссылке");
+                System.out.println("Установите версию приложения для iOS");
             } else {
-                System.out.println("Установите версию приложения для Android по ссылке");
+                System.out.println("Установите версию приложения для Android");
             }
         }
     }
 
-    public static int deliveryDistance(int distance) {
+    public static int calculateDeliveryDays(int distance) {
         if (distance <= 20) {
             return 1;
         } else if (distance <= 60) {
@@ -42,24 +41,17 @@ public class Main {
     }
 
     public static void main(String[] args) {
-        int year = 2024;
-        printLeapYearStatus(year);
-
+        printLeapYearStatus(2014);
+        byte clientOS = 1;
         int deviceYear = 1999;
-        softwareVersion(deviceYear);
+        softwareVersion(deviceYear, clientOS);
 
         int deliveryDistance = 90;
-        int days = deliveryDistance(deliveryDistance);
+        int days = calculateDeliveryDays(deliveryDistance);
         if (days > 0) {
             System.out.println("Потребуется дней: " + days);
         } else {
             System.out.println("Доставки нет.");
         }
     }
-
 }
-
-
-
-
-
