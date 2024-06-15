@@ -9,8 +9,8 @@ public class Main {
         }
     }
 
-    public static void softwareVersion(int deviceYear, byte clientOS) {
-        int currentYear = LocalDate.now().getYear();
+    public static void softwareVersion(int deviceYear, int clientOS) {
+        int currentYear = 2015;
         if (deviceYear < currentYear) {
             if (clientOS == 0) {
                 System.out.println("Установите облегченную версию приложения для iOS");
@@ -41,9 +41,7 @@ public class Main {
 
     public static void main(String[] args) {
         printLeapYearStatus(2014);
-        byte clientOS = 1;
-        int deviceYear = 1999;
-        softwareVersion(deviceYear, clientOS);
+        softwareVersion(1999, 1);
 
         int deliveryDistance = 90;
         int days = calculateDeliveryDays(deliveryDistance);
